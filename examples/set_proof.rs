@@ -116,7 +116,7 @@ fn main() {
         unreachable!()
     };
     println!(
-        "{},{},{},{},{},{},{},{}",
+        "{},{},{},{},{},{},{},{},{}",
         set,
         args.arg_transactions,
         args.arg_capacity,
@@ -125,6 +125,12 @@ fn main() {
         report.prover_synth.as_secs_f64(),
         report.prover_crypto.as_secs_f64(),
         report.verifier.as_secs_f64(),
+        match args.flag_hash {
+            Hashes::Poseidon => "Poseidon",
+            Hashes::Mimc => "Mimc",
+            Hashes::Pedersen => "Pedersen",
+            Hashes::Sha => "Sha",
+        },
     );
 }
 
