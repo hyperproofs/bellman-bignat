@@ -9,7 +9,7 @@ These instructions have been tested on Ubuntu 20.04 with 32 GB RAM. However, it 
 
 0. Install rust nightly, python, and pandas.
    ```bash
-   $ sudo apt-get install curl git
+   $ sudo apt-get install git python curl python3-pip libgmp-dev libflint-dev
    $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
    > Choose 2 (Customize installation)
@@ -21,6 +21,7 @@ These instructions have been tested on Ubuntu 20.04 with 32 GB RAM. However, it 
 
    $ git clone https://github.com/hyperproofs/bellman-bignat.git
    $ cd bellman-bignat
+   $ pip3 install -U pip pandas matplotlib
 
    ```
 1. Run ```merkle-snarks-setup.sh```: This generates 53 GBs of SNARK parameters in folders ```pedersen-30```  and ```poseidon-30```.
