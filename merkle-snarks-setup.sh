@@ -20,6 +20,6 @@ time cargo +nightly run --release --example set_proof merkle 64 30 --hash poseid
 time cargo +nightly run --release --example set_proof merkle 128 30 --hash poseidon -v --oparams poseidon-30/poseidon-TX-07.in;
 time cargo +nightly run --release --example set_proof merkle 256 30 --hash poseidon -v --oparams poseidon-30/poseidon-TX-08.in;
 time cargo +nightly run --release --example set_proof merkle 512 30 --hash poseidon -v --oparams poseidon-30/poseidon-TX-09.in;
-time cargo +nightly run --release --example set_proof merkle 1024 30 --hash poseidon -v --oparams poseidon-30/poseidon-TX-10.in;) | tee merkle-snarks-baseline.log
+time cargo +nightly run --release --example set_proof merkle 1024 30 --hash poseidon -v --oparams poseidon-30/poseidon-TX-10.in;) | tee merkle-snarks-setup.log
 
-time python parse-logs.py merkle-snarks-baseline.log
+# time python parse-logs.py merkle-snarks-baseline.log

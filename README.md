@@ -1,19 +1,33 @@
 # Bellman-BigNat
 
 This repository is a fork of [bellman-bignat](https://github.com/alex-ozdemir/bellman-bignat).
-However, it contains the scripts that compute the proving and verification time of SNARKs based Merkle-proof aggregation. These metrics serve as baseline to compare the performance of [Hyperproofs aggregation](https://eprint.iacr.org/2021/599.pdf).
+However, it contains the scripts that compute the proving and verification time of SNARKs based Merkle-proof aggregation.
+These metrics serve as baseline to compare the performance of [Hyperproofs aggregation](https://eprint.iacr.org/2021/599.pdf).
 
 ## Instructions
 These instructions have been tested on Ubuntu 20.04 with 32 GB RAM. However, it should be possible to replicate this on other operating systems.
 
 0. Install rust nightly, python, and pandas.
-1. Run merkle-snarks.sh:
+   ```bash
+   $ sudo apt-get install curl git
+   $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-   This generates
-   *  53 GBs of SNARK parameters in folders ```pedersen-30```  and ```poseidon-30```
-   *  ```merkle-snarks-baseline.log``` which is parsed by ```parse-logs.py```
-2. Once the parameters have been generated, simply invoke ```merkle-snarks-rerun.sh``` for subsequent reruns.
+   > Choose 2 (Customize installation)
+   > Choose x86_64-unknown-linux-gnu
+   > Choose nightly
+   > Choose default
+   > Modify PATH variable? Y
+   > Choose 1 (Proceed with installation)
 
+   $ git clone https://github.com/hyperproofs/bellman-bignat.git
+   $ cd bellman-bignat
+
+   ```
+1. Run ```merkle-snarks-setup.sh```: This generates 53 GBs of SNARK parameters in folders ```pedersen-30```  and ```poseidon-30```.
+
+2. Run ```merkle-snarks-bench.sh```: This generates the ```merkle-snarks-baseline.log``` which is automatically parsed by ```parse-logs.py```.
+
+3. Copy ```pedersen-30-single.csv``` and ```poseidon-30-single.csv``` to [hyperproofs-go/plots](https://github.com/hyperproofs/hyperproofs-go/tree/main/plots).
 
 ## Sample output
 
