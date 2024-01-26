@@ -13,4 +13,4 @@ time cargo +nightly run --release --example set_proof merkle 256 27 --hash posei
 time cargo +nightly run --release --example set_proof merkle 512 27 --hash poseidon -v --iparams poseidon-30/poseidon-TX-09.in;
 time cargo +nightly run --release --example set_proof merkle 1024 27 --hash poseidon -v --iparams poseidon-30/poseidon-TX-10.in;) | tee merkle-snarks-baseline.log
 
-time python parse-logs.py merkle-snarks-baseline.log
+time python3 parse-logs.py merkle-snarks-baseline.log
